@@ -3,6 +3,8 @@ const mongoose = require("mongoose");
 
 const customEnv = require("./customEnv");
 
+const photoRoutes = require("./routes/photo");
+
 const app = express();
 
 mongoose
@@ -32,5 +34,7 @@ app.use(
     extended: true,
   })
 );
+
+app.use("/api/photo", photoRoutes);
 
 module.exports = app;
